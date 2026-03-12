@@ -2,6 +2,7 @@
 using namespace std;
 int TinhTich(int a, int b);
 int LaSoChan(int a);
+int LaUocSo(int a, int b);
 int main()
 {
 	int a, b, c, d, e, n, sohientai;
@@ -21,19 +22,29 @@ int main()
 		if (LaSoChan(sohientai) == 1)
 			cout << sohientai << " la so chan" << endl;
 	}
+	if (LaUocSo(a, b) == 1)
+		cout << "a la uoc so cua b";
+	else
+		cout << "a ko la uoc so cua b";
 
 	return 0;
 }
-
 int TinhTich(int a, int b)
 {
 	int tich = a * b;
 	return tich;
 }
-
 int LaSoChan(int a)
 {
 	if (a % 2 == 0)
+		return 1;
+	return 0;
+}
+int LaUocSo(int a, int b)
+{
+	if (a == 0)
+	return 0;
+	if (b % a == 0)
 		return 1;
 	return 0;
 }
