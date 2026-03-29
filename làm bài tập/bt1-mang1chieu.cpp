@@ -12,7 +12,7 @@ void insochiahetcho3(int a[], int N) {
 	cout << "Cac so chia het cho 3 trong mang la: ";
 	for (int i = 0; i < N; i++) {
 		if (a[i] % 3 == 0)
-		cout << a[i] << " ";
+			cout << a[i] << " ";
 	}
 	cout << endl;
 }
