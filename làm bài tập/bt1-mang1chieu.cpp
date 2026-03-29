@@ -1,34 +1,36 @@
 #include <iostream>
 using namespace std;
-void demsochantrongmang(int a[], int N) {
+void demsochiahetcho3(int a[], int N) {
 	int dem = 0;
 	for (int i = 0; i < N; i++) {
 		if (a[i] % 3 == 0)
 			dem++;
 	}
-	cout << "so luong so chia het cho 3 trong mang la: " << dem << " ";
+	cout << "So luong so chia het cho 3 trong mang la: " << dem << endl;
 }
-void insochantrongmang (int a[], int N) {
-	cout << "cac so chia het cho 3 trong mang la: ";
+void insochiahetcho3(int a[], int N) {
+	cout << "Cac so chia het cho 3 trong mang la: ";
 	for (int i = 0; i < N; i++) {
 		if (a[i] % 3 == 0)
 		cout << a[i] << " ";
 	}
+	cout << endl;
 }
-void tongsochan(int a[], int N) {
+void tongsovitrichan(int a[], int N) {
 	int tong = 0;
 	for (int i = 0; i < N; i++) {
-		if(a[i] % 3 == 0)
+		if(i % 2 == 0)
 		tong += a[i];
 	}
-	cout << "Tong cac so chia het cho 3 trong mang la: " << tong << endl;
+	cout << "Tong cac so vi tri chan trong mang la: " << tong << endl;
 }
-void insoletrongmang (int a[], int N) {
-	cout << "Cac so le trong mang la: ";
+void insovitriletrongmang (int a[], int N) {
+	cout << "Cac so vi tri le trong mang la: ";
 	for (int i = 0; i < N; i++) {
-		if (a[i] % 2 != 0)
+		if (i % 2 != 0)
 			cout << a[i] << " ";
 	}
+	cout << endl;
 }
 
 int main() {
@@ -42,11 +44,8 @@ int main() {
 		cout << "Nhap a[" << i << "]: ";
 		cin >> a[i];
 	}
-	demsochantrongmang(a, N);
-	cout << endl;
-	insochantrongmang(a, N);
-	cout << endl;
-	tongsochan(a, N);
-	cout << endl;
-	insoletrongmang(a, N);
+	demsochiahetcho3(a, N);
+	insochiahetcho3(a, N);
+	tongsovitrichan(a, N);
+	insovitriletrongmang(a, N);
 }
