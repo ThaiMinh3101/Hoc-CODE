@@ -52,7 +52,7 @@ void xoaphantubangXcuoicungtrongmang(int a[], int &N){
     // 1 2 3 4 5 6 7 5 9
     // xoa so 5 cuoi cung
     // 1 2 3 4 5 6 7 9
-    int X, vitricuoi;
+    int X, vitricuoi = -1; //cho vitricuoi = -1 để nếu không tìm thấy phần tử nào bằng X thì sẽ không xoá phần tử nào ở vòng lặp 2 thay vì đặt là 0
     cout << "nhap gia tri X can xoa: ";
     cin >> X;
     for (int i = N -1; i >= 0; i--) {
@@ -61,13 +61,17 @@ void xoaphantubangXcuoicungtrongmang(int a[], int &N){
             break;
         }
     }
-    for (int i = vitricuoi; i < N - 1; i++) {
-        a[i] = a[i + 1];
-    }
-    N--;
-    cout << "Mang sau khi xoa: ";
-    for (int i = 0; i < N; i++) {
-        cout << a[i] << " ";
+    if (vitricuoi != -1) {
+        for (int i = vitricuoi; i < N - 1; i++) {
+            a[i] = a[i + 1];
+        }
+        N--;
+        cout << "Mang sau khi xoa: ";
+        for (int i = 0; i < N; i++) {
+            cout << a[i] << " ";
+        }
+    } else {
+        cout << "Khong co phan tu nao bang " << X << " trong mang." << endl;
     }
 }
 
