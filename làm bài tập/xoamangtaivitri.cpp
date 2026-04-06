@@ -8,7 +8,7 @@ void xoamangtaivitri(int a[], int &N) // truyền tham chiếu cho N để có t
     int X;
     cout << "nhap vi tri X can xoa: ";
     cin >> X;
-    for (int i = X; i < N - 1; i++) // N-1 vì phần tử cuối cùng sẽ bị xoá nên không cần gán giá trị cho nó
+    for (int i = X; i < N - 1; i++) // cho N-1 vì phần tử cuối cùng sẽ bị xoá nên không cần gán giá trị cho nó
     {
         a[i] = a[i + 1];
     }
