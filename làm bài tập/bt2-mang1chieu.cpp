@@ -55,7 +55,7 @@ void xoaphantubangXcuoicungtrongmang(int a[], int &N){
     int X, vitricuoi = -1; //cho vitricuoi = -1 để nếu không tìm thấy phần tử nào bằng X thì sẽ không xoá phần tử nào ở vòng lặp 2 thay vì đặt là 0
     cout << "nhap gia tri X can xoa: ";
     cin >> X;
-    for (int i = N -1; i >= 0; i--) {
+    for (int i = N - 1; i >= 0; i--) {
         if (a[i] == X) {
             vitricuoi = i;
             break;
