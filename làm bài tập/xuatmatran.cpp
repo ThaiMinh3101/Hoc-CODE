@@ -11,7 +11,7 @@ void xuat_ma_tran(int a[50][50], int &n, int &m) {
 int main() {
 	int a[50][50];
 	int n, m;
-	cout << "Nhap so hang: ";
+	cout << "Nhap so dong: ";
 	cin >> n;
 	cout << "Nhap so cot: ";
 	cin >> m;
