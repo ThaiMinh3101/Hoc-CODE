@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-void xuat_ma_tran(int a[50][100], int &n, int &m) {
+void xuat_ma_tran(int a[50][50], int &n, int &m) {
 	cout << "----MaTran----" << endl;
 	for (int j = 0; j < m; j++) {
 		for (int i = 0; i < n; i++)
@@ -9,7 +9,7 @@ void xuat_ma_tran(int a[50][100], int &n, int &m) {
 	}
 }
 int main() {
-	int a[50][100];
+	int a[50][50];
 	int n, m;
 	cout << "Nhap so hang: ";
 	cin >> n;

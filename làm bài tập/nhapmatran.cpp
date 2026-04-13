@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-void nhap_ma_tran(int a[50][100], int &n, int &m) {
+void nhap_ma_tran(int a[50][50], int &n, int &m) {
 	for (int j = 0; j < m; j++) {
 		for (int i = 0; i < n; i++) {
 			cout << "Nhap a[" << j << "][" << i << "]: ";
@@ -9,7 +9,7 @@ void nhap_ma_tran(int a[50][100], int &n, int &m) {
 	}
 }
 int main() {
-	int a[50][100];
+	int a[50][50];
 	int n, m;
 	cout << "Nhap so hang: ";
 	cin >> n;
