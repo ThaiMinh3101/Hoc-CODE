@@ -48,7 +48,38 @@ int tongcotle(int a[50][50], int n, int m) {
     }
     return tong;
 }
-
+/*câu 4*/
+int tbphantuchan (int a[50][50], int n, int m) {
+    int dem = 0, tong = 0;
+    float tb;
+    for (int j = 0; j < m; j++) {
+        for (int i = 0; i < n; i++ ) {
+            if (a[j][i] % 2 == 0) {
+                tong = tong + a[j][i];
+                dem++;
+            }
+        }
+    }
+    tb = (float)tong / dem;
+    if (dem > 0) {
+        return tb;
+    } else {
+        return 0;
+    }
+}
+/*câu 5*/
+int tongtungdong (int a[50][50], int n, int m) {
+    int tong = 0;
+    for (int j = 0; j < m; j++) {
+        for (int i = 0; i < n; i++) {
+            if (j == dong) {
+                tong += a[j][i];
+            }
+        }
+    }
+    return tong;
+}
+/*câu 6*/
 int main() {
     int a[50][50], n, m;
     cout << "Nhap so hang: ";
@@ -65,5 +96,10 @@ int main() {
     vtrigiatrimin(a, n, m, d, c);
     gtriamlonnhat(a, n, m);
     cout << "Tong cac gia tri o cot le: " << tongcotle(a, n, m) << endl;
+    cout << "Trung binh cong cac gia tri chan: " << tbphantuchan(a, n, m) << endl;
+    int dong;
+    cout << "Nhap dong can tinh tong: ";
+    cin >> dong;
+    cout << "Tong cac gia tri o dong " << dong << ": " << tongtungdong(a, n, m, dong) << endl;
     return 0;
 }
