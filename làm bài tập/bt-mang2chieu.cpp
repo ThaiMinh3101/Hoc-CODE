@@ -87,7 +87,7 @@ void cotcotblonnhat(int a[50][50], int m, int n) {
         for (int j = 0; j < m; j++) {
             tong = tong + a[j][i];
         }
-        tbcot[i] = (float)tong / m;
+        tbcot[i] = (float)tong / n;
     }
     // Tìm cột có TB lớn nhất
     int maxcot = 0;
@@ -99,15 +99,20 @@ void cotcotblonnhat(int a[50][50], int m, int n) {
     cout << "Cot co trung binh lon nhat la cot " << maxcot << " voi gia tri: " << tbcot[maxcot] << endl;
 }
 /*câu 7*/
-void tbphantuminmoicot(int a[50][50], int m, int n) {
-    float tbcot[50];
+int tbphantuminmoicot(int a[50][50], int m, int n) {
+    float tbcaccot = 0;
+    float tongmincot = 0;
     for (int i = 0; i < n; i++) {
-        int tong = 0;
+        int mincot = a[0][i];
         for (int j = 0; j < m; j++) {
-            tong = tong + a[j][i];
+            if (a[j][i] < mincot) {
+                mincot = a[j][i];
+            }
+            tongmincot = tongmincot + a[j][i];
         }
-        tbcot[i] = (float)tong / m;
+        tbcaccot = (float)tongmincot / n;
     }
+    return tbcaccot;
 }
 int main() {
     int a[50][50], m, n;
@@ -131,5 +136,6 @@ int main() {
     cin >> dong;
     cout << "Tong cac gia tri o dong " << dong << ": " << tongtungdong(a, m, n, dong) << endl;
     cotcotblonnhat(a, m, n);
+    cout << "Trung binh cac phan tu nho nhat o moi cot: " << tbphantuminmoicot(a, m, n) << endl;
     return 0;
 }
