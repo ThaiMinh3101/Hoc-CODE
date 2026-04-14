@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 /*câu 1*/
-void gtriamlonnhat(int a[50][50], int n, int m) {
+void gtriamlonnhat(int a[50][50], int &m, int &n) {
     int maxam;
     int cosoam = 0;
     
@@ -23,7 +23,7 @@ void gtriamlonnhat(int a[50][50], int n, int m) {
         cout << "Khong co gia tri am" << endl;
 }
 /*câu 2*/
-void vtrigiatrimin(int a[50][50], int n, int m, int &d, int &c) {
+void vtrigiatrimin(int a[50][50], int &m, int &n, int &d, int &c) {
     float min = a[0][0];
     d = 0;
     c = 0;
@@ -39,7 +39,7 @@ void vtrigiatrimin(int a[50][50], int n, int m, int &d, int &c) {
     cout << "Gia tri nho nhat la: "<<min<<" tai vi tri ["<<d<<"]["<<c<<"]" << endl;
 }
 /*câu 3*/
-int tongcotle(int a[50][50], int n, int m) {
+int tongcotle(int a[50][50], int &m, int &n) {
     int tong = 0;
     for (int j = 0; j < m; j++) {
         for (int i = 1; i < n; i+=2) {
@@ -49,7 +49,7 @@ int tongcotle(int a[50][50], int n, int m) {
     return tong;
 }
 /*câu 4*/
-int tbphantuchan (int a[50][50], int n, int m) {
+int tbphantuchan (int a[50][50], int &m, int &n) {
     int dem = 0, tong = 0;
     float tb;
     for (int j = 0; j < m; j++) {
@@ -68,7 +68,7 @@ int tbphantuchan (int a[50][50], int n, int m) {
     }
 }
 /*câu 5*/
-int tongtungdong (int a[50][50], int n, int m, int dong) {
+int tongtungdong (int a[50][50], int &m, int &n, int dong) {
     int tong = 0;
     for (int j = 0; j < m; j++) {
         for (int i = 0; i < n; i++) {
@@ -80,7 +80,7 @@ int tongtungdong (int a[50][50], int n, int m, int dong) {
     return tong;
 }
 /*câu 6*/
-void cotcotblonnhat(int a[50][50], int n, int m) {
+void cotcotblonnhat(int a[50][50], int &m, int &n) {
     float tbcot[50];
     for (int i = 0; i < m; i++) {
         int tong = 0;
@@ -98,12 +98,17 @@ void cotcotblonnhat(int a[50][50], int n, int m) {
     }
     cout << "Cot co trung binh lon nhat la cot " << maxcot << " voi gia tri: " << tbcot[maxcot] << endl;
 }
+/*câu 7*/
+void tbphantuminmoicot(int a[50][50], int &m, int &n) {
+    for (int i = 0; i < m; i++) {
+    }
+}
 int main() {
-    int a[50][50], n, m;
+    int a[50][50], m, n;
     cout << "Nhap so dong: ";
-    cin >> n;
-    cout << "Nhap so cot: ";
     cin >> m;
+    cout << "Nhap so cot: ";
+    cin >> n;
     for (int j = 0; j < m; j++) {
 		for (int i = 0; i < n; i++) {
 			cout << "Nhap a[" << j << "][" << i << "]: ";
@@ -111,14 +116,14 @@ int main() {
 		}
 	}
     int d, c;
-    vtrigiatrimin(a, n, m, d, c);
-    gtriamlonnhat(a, n, m);
-    cout << "Tong cac gia tri o cot le: " << tongcotle(a, n, m) << endl;
-    cout << "Trung binh cong cac gia tri chan: " << tbphantuchan(a, n, m) << endl;
+    vtrigiatrimin(a, m, n, d, c);
+    gtriamlonnhat(a, m, n);
+    cout << "Tong cac gia tri o cot le: " << tongcotle(a, m, n) << endl;
+    cout << "Trung binh cong cac gia tri chan: " << tbphantuchan(a, m, n) << endl;
     int dong;
     cout << "Nhap dong can tinh tong: ";
     cin >> dong;
-    cout << "Tong cac gia tri o dong " << dong << ": " << tongtungdong(a, n, m, dong) << endl;
-    cotcotblonnhat(a, n, m);
+    cout << "Tong cac gia tri o dong " << dong << ": " << tongtungdong(a, m, n, dong) << endl;
+    cotcotblonnhat(a, m, n);
     return 0;
 }
