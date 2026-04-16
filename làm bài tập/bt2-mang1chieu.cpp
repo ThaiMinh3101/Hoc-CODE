@@ -1,96 +1,134 @@
 #include <iostream>
 using namespace std;
-void tongmang(int a[], int N) {
-    int tong = 0;
-    for (int i = 0; i < N; i++) {
-        tong += a[i];
-    }
-    cout << "Tong cac so trong mang la: " << tong << endl;
-}
-void phantuduongnhonhat(int a[], int N) {
-    int min = 0;
-    for (int i = 0; i < N; i++) {
-        if (a[i] > 0 && a[i] % 2 == 0) {
-            if (min == 0 || a[i] < min)
-                min = a[i];
-        }
-    }
-    if (min > 0)
-        cout << "Phan tu duong nho nhat trong mang la: " << min << endl;
-    else
-        cout << "Khong co phan tu duong trong mang." << endl;
-}
-void sobangX(int a[], int N, int X) {
-    int dem = 0;
-    for (int i = 0; i < N; i++) {
-        if (a[i] == X) {
-            dem++;
-        }
-    }
-    if (dem == 0)
-        cout << "Khong co phan tu nao bang " << X << " trong mang." << endl;
-    else
-        cout << "Co " << dem << " phan tu bang " << X << " trong mang." << endl;
-}
-void chenXvaovitritrongmang(int a[], int &N) {
-    int X;
-    cout << "nhap vi tri X can chen: ";
-    cin >> X;
-    for (int i = N; i > X; i--) // N-1 là vị trí cuối mảng còn cho i = N là cho mảng nhích thêm 1 phần tử để có chỗ trống ra
-    {
-        a[i] = a[i - 1];
-    }
-    cout << "nhap gia tri can chen: ";
-    cin >> a[X];
-    N++;
-    cout << "Mang sau khi chen: ";
-    for (int i = 0; i < N; i++) {
-        cout << a[i] << " ";
-    }
-}
-void xoaphantubangXcuoicungtrongmang(int a[], int &N){
-    // 1 2 3 4 5 6 7 5 9
-    // xoa so 5 cuoi cung
-    // 1 2 3 4 5 6 7 9
-    int X, vitricuoi = -1; //cho vitricuoi = -1 để nếu không tìm thấy phần tử nào bằng X thì sẽ không xoá phần tử nào ở vòng lặp 2 thay vì đặt là 0
-    cout << "nhap gia tri X can xoa: ";
-    cin >> X;
-    for (int i = N - 1; i >= 0; i--) {
-        if (a[i] == X) {
-            vitricuoi = i;
-            break;
-        }
-    }
-    if (vitricuoi != -1) {
-        for (int i = vitricuoi; i < N - 1; i++) {
-            a[i] = a[i + 1];
-        }
-        N--;
-        cout << "Mang sau khi xoa: ";
-        for (int i = 0; i < N; i++) {
-            cout << a[i] << " ";
-        }
-    } else {
-        cout << "Khong co phan tu nao bang " << X << " trong mang." << endl;
-    }
-}
+/*câu 1*/
+void gtriamlonnhat(int a[50][50], int m, int n) {
+    int maxam;
+    int cosoam = 0;
 
-int main() {
-    int a[100];
-    int N;
-    cout << "nhap N: ";
-    cin >> N;
-    for (int i = 0; i < N; i++) {
-        cout << "nhap mang a[" << i << "]: ";
-        cin >> a[i];
+    for (int j = 0; j < m; j++) {
+        for (int i = 0; i < n; i++) {
+            if (a[j][i] < 0) {
+                if (cosoam == 0) {
+                    maxam = a[j][i];
+                    cosoam = 1;
+                }
+                else if (a[j][i] > maxam) {
+                    maxam = a[j][i];
+                }
+            }
+        }
     }
-    tongmang(a, N);
-    phantuduongnhonhat(a, N);
-    int X;
-    cout << "nhap gia tri X: ";
-    cin >> X;
-    sobangX(a, N, X);
-    chenXvaovitritrongmang(a, N);
-    cout << endl;
-    xoaphantubangXcuoicungtrongmang(a, N);
+    if (cosoam == 1)
+        cout << "Gia tri am lon nhat: " << maxam << endl;
+    else
+        cout << "Khong co gia tri am" << endl;
+}
+/*câu 2*/
+void vtrigiatrimin(int a[50][50], int m, int n, int& d, int& c) {
+    float min = a[0][0];
+    d = 0;
+    c = 0;
+    for (int j = 0; j < m; j++) {
+        for (int i = 0; i < n; i++) {
+            if (a[j][i] < min) {
+                min = a[j][i];
+                d = j;
+                c = i;
+            }
+        }
+    }
+    cout << "Gia tri nho nhat la: " << min << " tai vi tri [" << d << "][" << c << "]" << endl;
+}
+/*câu 3*/
+int tongcotle(int a[50][50], int m, int n) {
+    int tong = 0;
+    for (int j = 0; j < m; j++) {
+        for (int i = 1; i < n; i += 2) {
+            tong = tong + a[j][i];
+        }
+    }
+    return tong;
+}
+/*câu 4*/
+int tbphantuchan(int a[50][50], int m, int n) {
+    int dem = 0, tong = 0;
+    float tb;
+    for (int j = 0; j < m; j++) {
+        for (int i = 0; i < n; i++) {
+            if (a[j][i] % 2 == 0) {
+                tong = tong + a[j][i];
+                dem++;
+            }
+        }
+    }
+    tb = (float)tong / dem;
+    if (dem > 0) {
+        return tb;
+    }
+    else {
+        return 0;
+    }
+}
+/*câu 5*/
+void tongtungdong(int a[50][50], int m, int n) {
+    for (int j = 0; j < m; j++) {
+        int tong = 0;
+        for (int i = 0; i < n; i++) {
+            tong += a[j][i];
+        }
+        cout << "tong cua dong " << j << " = " << tong << endl;
+    }
+}
+/*câu 6*/
+void cotcotblonnhat(int a[50][50], int m, int n) {
+    float tbcotlonnhat = -1000000;
+    float cotlonnhat = -1;
+    for (int i = 0; i < n; i++) {
+        float tongcot = 0;
+        for (int j = 0; j < m; j++) {
+            tongcot = tongcot + a[j][i];
+        }
+        float tbcot = tongcot / n;
+        if (cotlonnhat == -1 || tbcot > tbcotlonnhat) {
+            tbcotlonnhat = tbcot;
+            cotlonnhat = i;
+        }
+    }
+    cout << "Cot co trung binh lon nhat la cot " << cotlonnhat << " voi gia tri: " << tbcotlonnhat << endl;
+}
+/*câu 7*/
+int tbphantuminmoicot(int a[50][50], int m, int n) {
+    float tong = 0;
+    for (int i = 0; i < n; i++) {
+        float mincot = a[0][i];
+        for (int j = 1; j < m; j++) {
+            if (a[j][i] < mincot) {
+                mincot = a[j][i];
+            }
+            tong += mincot;
+        }
+    }
+    return (tong / n);
+}
+int main() {
+    int a[50][50], m, n;
+    cout << "Nhap so dong: ";
+    cin >> m;
+    cout << "Nhap so cot: ";
+    cin >> n;
+    for (int j = 0; j < m; j++) {
+        for (int i = 0; i < n; i++) {
+            cout << "Nhap a[" << j << "][" << i << "]: ";
+            cin >> a[j][i];
+        }
+    }
+    int d, c;
+    vtrigiatrimin(a, m, n, d, c);
+    gtriamlonnhat(a, m, n);
+    cout << "Tong cac gia tri o cot le: " << tongcotle(a, m, n) << endl;
+    cout << "Trung binh cong cac gia tri chan: " << tbphantuchan(a, m, n) << endl;
+    tongtungdong(a, m, n);
+    cotcotblonnhat(a, m, n);
+    cout << "Trung binh cua cac phan tu nho nhat la: " << tbphantuminmoicot(a, m, n) << endl;
+    return 0;
 }
