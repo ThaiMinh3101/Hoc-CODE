@@ -5,9 +5,9 @@ struct ToaDo
 	int x;
 	int y;
 };
-//truy?n c?u trúc cho hàm
+//truy?n c?u trï¿½c cho hï¿½m
 
-//cách 1:
+//cï¿½ch 1:
 void Nhaptd1(ToaDo &td) {
 	cout << "Nhap hoang do: ";
 	cin >> td.x;
@@ -15,11 +15,9 @@ void Nhaptd1(ToaDo &td) {
 	cin >> td.y;
 	
 };
-void Xuattd(ToaDo td) {
-	cout << "td la: " << td.x << ", " << td.y << endl;
-};
 
-//cách 2:
+
+//cï¿½ch 2:
 ToaDo Nhaptd2() {
 	ToaDo td;
 	cout << "Nhap hoang do: ";
@@ -27,6 +25,11 @@ ToaDo Nhaptd2() {
 	cout << "Nhap tung do: ";
 	cin >> td.y;
 	return td;
+};
+
+//xuat ham cau truc
+void Xuattd(ToaDo td) {
+	cout << "td la: " << td.x << ", " << td.y << endl;
 };
 
 int main() {
