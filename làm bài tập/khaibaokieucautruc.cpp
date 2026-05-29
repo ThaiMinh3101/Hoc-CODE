@@ -20,6 +20,12 @@ int main() {
 	cin >> sv.phai;
 	cout << "Nhap diem toan ly hoa: ";
 	cin >> sv.toan >> sv.ly >> sv.hoa;
+	cout<<"Thong tin sinh vien:"<<endl;
+	cout << "MSSV: " << sv.mssv << endl;
+	cout << "Ho ten: " << sv.hoten << endl;
+	cout << "Ngay thang nam sinh: " << sv.ntns << endl;
+	cout << "Phai: " << sv.phai << endl;
 	cout << "diem toan ly hoa la: ";
 	cout << "(" << sv.toan << "," << sv.ly << "," << sv.hoa << ")";
+	
 }
