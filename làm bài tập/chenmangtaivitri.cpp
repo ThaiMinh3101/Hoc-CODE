@@ -8,7 +8,7 @@ void chenMangTaiViTri(int a[], int &N) // truyền tham chiếu cho N để có 
     int X;
     cout << "nhap vi tri X can chen: ";
     cin >> X;
-    for (int i = N; i > X; i--) // N-1 là vị trí cuối mảng còn cho i = N là cho mảng nhích thêm 1 phần tử để có chỗ trống ra
+    for (int i = N-1; i > X; i--) // N-1 là vị trí cuối mảng còn cho i = N là cho mảng nhích thêm 1 phần tử để có chỗ trống ra
     {
         a[i] = a[i - 1];
     }
