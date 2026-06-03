@@ -5,6 +5,7 @@ int main() {
     cout << "nhap chuoi: ";
     gets(s);
     int n = strlen(s);
+    cout << "do dai chuoi la: " << n << endl;
     /*câu 1*/
     for (int i = 0; i < n; i++) {
         if (s[i] >= 'a' && s[i] <= 'z') {
@@ -22,6 +23,6 @@ int main() {
     cout << "chuoi da lower la: ";
     puts(s);
 }
-/*câu 1 upper if a>z */ 
-/*câu 2 lower  */ 
+/*câu 1 upper if a->z */ 
+/*câu 2 lower if A->Z */
 /*câu 3 standard*/
