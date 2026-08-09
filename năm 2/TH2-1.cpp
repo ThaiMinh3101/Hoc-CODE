@@ -3,11 +3,11 @@ using namespace std;
 
 // Hàm tính tổng và đếm số phép gán (d1), số phép so sánh (d2)
 int bt1(int n, int &d1, int &d2) {
-    int S = 0; d1++; // Phép gán khởi tạo S = 0
-    int P = 0; d1++; // Phép gán khởi tạo P = 0 (tổng phụ 1+2+...+i)
+    int P = 1; d1++; // Phép gán khởi tạo P = 1 (tổng con dau tien: 1)
+    int S = 1; d1++; // Phép gán khởi tạo S = P (số hạng đầu tiên của S là 1)
 
-    d1++; // Phép gán khởi tạo biến i = 1 trong vòng lặp for
-    for (int i = 1; i <= n; i++) {
+    d1++; // Phép gán khởi tạo biến i = 2 trong vòng lặp for
+    for (int i = 2; i <= n; i++) {
         d2++; // Đếm phép so sánh điều kiện i <= n (khi điều kiện đúng)
         P += i; d1++; // Phép gán P = P + i
         S += P; d1++; // Phép gán S = S + P
