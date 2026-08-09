@@ -1,59 +1,59 @@
 #include <iostream>
 using namespace std;
-void nhapmang(int a[], int N) {
-    for (int i = 0; i < N; i++) {
-        cout << "Nhap a[" << i << "]: ";
-        cin >> a[i];
-    }
-}
-void xuatmang(int a[], int N) {
-    cout << "Mang da nhap la: ";
-    for (int i = 0; i < N; i++) {
-        cout << a[i] << " ";
-    }
-    cout << endl;
-}
-int TimXDauTien(int a[], int N, int X, int &d1) {
-    for (int i = 0; i < N; i++) {
-        d1++;
-        if (a[i] == X) return i;
-    }
-    return -1;
-}
-int TimMax(int a[], int N, int &d1, int &d2) {
-    int m = a[0];
-    d1++;
-    for (int i = 0; i < N; i++) {
-        d2++;
-        if (a[i]>m) {
-            m = a[i];
-            d1++;
+
+/*
+    Bai 2: Tinh tong cac phan tu o vi tri chan co trong mang
+    (vi tri chan tuc la chi so chan: 0, 2, 4, ... - tinh theo chi so mang bat dau tu 0)
+    Dem so phep so sanh va phep gan da thuc hien trong ham.
+*/
+
+int tongViTriChan(int a[], int n, long long &soPhepSoSanh, long long &soPhepGan)
+{
+    int tong = 0;      // phep gan (khoi tao tong)
+    soPhepGan++;
+
+    int i = 0;          // phep gan (khoi tao chi so)
+    soPhepGan++;
+
+    while (soPhepSoSanh++, i < n) // phep so sanh dieu kien lap
+    {
+        soPhepSoSanh++;   // phep so sanh kiem tra vi tri chan (i % 2 == 0)
+        if (i % 2 == 0)
+        {
+            tong += a[i]; // phep gan (cong don)
+            soPhepGan++;
         }
+
+        i++;              // phep gan
+        soPhepGan++;
     }
-    return m;
+
+    return tong;
 }
+
 int main()
 {
-    int a[100];
     int n;
-    cout << "Nhap so phan tu trong mang n: ";
+    cout << "Nhap so phan tu cua mang: ";
     cin >> n;
-    int d1 = 0, d2 = 0;
-    nhapmang(a, n);
-    xuatmang(a, n);
 
-    int X;
-    cout << "\nNhap gia tri X can tim:";
-    cin >> X;
-    int kq = TimXDauTien(a, n, X,d1);
-    if (kq == -1)
-    cout << "\nKhong co " << X << " trong mang";
-    else
-    cout <<"\n"<<X<<" xuat hien dau tien o vi tri "<<kq<<" trong mang";
-    cout << "\nSo phep so sanh da thuc hien de tim X dau tien la:" << d1;
+    int *a = new int[n];
+    cout << "Nhap cac phan tu cua mang:\n";
+    for (int i = 0; i < n; i++)
+    {
+        cout << "a[" << i << "] = ";
+        cin >> a[i];
+    }
 
-    cout << "\nGia tri lon nhat la:" << TimMax(a, n, d1, d2);
-    cout << "\nSo phep gan da thuc hien la:" << d1;
-    cout << "\nSo phep so sanh da thuc hien la:" << d2;
+    long long soPhepSoSanh = 0;
+    long long soPhepGan = 0;
+
+    int tong = tongViTriChan(a, n, soPhepSoSanh, soPhepGan);
+
+    cout << "Tong cac phan tu o vi tri chan: " << tong << endl;
+    cout << "So phep so sanh da thuc hien: " << soPhepSoSanh << endl;
+    cout << "So phep gan da thuc hien: " << soPhepGan << endl;
+
+    delete[] a;
     return 0;
 }

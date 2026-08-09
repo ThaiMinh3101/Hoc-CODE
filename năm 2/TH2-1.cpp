@@ -1,39 +1,56 @@
 #include <iostream>
 using namespace std;
 
-// Hàm tính tổng và đếm số phép gán (d1), số phép so sánh (d2)
-int bt1(int n, int &d1, int &d2) {
-    int S = 0; d1++; // Phép gán khởi tạo S = 0
-    int P = 0; d1++; // Phép gán khởi tạo P = 0 (tổng phụ 1+2+...+i)
-
-    d1++; // Phép gán khởi tạo biến i = 1 trong vòng lặp for
-    for (int i = 1; i <= n; i++) {
-        d2++; // Đếm phép so sánh điều kiện i <= n (khi điều kiện đúng)
-        
-        P += i; d1++; // Phép gán P = P + i
-        S += P; d1++; // Phép gán S = S + P
-        
-        d1++; // Phép gán i++ (hoặc i = i + 1) sau mỗi vòng lặp
+void nhapmang(int a[], int n) {
+    for (int i = 0; i < n; i++) {
+        cout << "Nhap a[" << i << "]: ";
+        cin >> a[i];
     }
-    d2++; // Đếm 1 lần phép so sánh i <= n cuối cùng (khi điều kiện sai để thoát lặp)
+}
 
-    return S;
+void xuatmang(int a[], int n) {
+    cout << "Mang da nhap la: ";
+    for (int i = 0; i < n; i++) {
+        cout << a[i] << " ";
+    }
+    cout << endl;
+}
+
+// Tinh tong cac phan tu o vi tri chan (chi so 0, 2, 4, ...)
+// Dem so phep gan (d1) va so phep so sanh (d2)
+int TongViTriChan(int a[], int n, int &d1, int &d2) {
+    int tong = 0; d1++; // Phep gan khoi tao tong = 0
+
+    d1++; // Phep gan khoi tao i = 0 trong vong lap for
+    for (int i = 0; i < n; i++) {
+        d2++; // Dem phep so sanh dieu kien i < n (khi dung)
+
+        d2++; // Dem phep so sanh i % 2 == 0
+        if (i % 2 == 0) {
+            tong += a[i]; d1++; // Phep gan tong = tong + a[i]
+        }
+
+        d1++; // Phep gan i++ sau moi vong lap
+    }
+    d2++; // Dem 1 lan phep so sanh i < n cuoi cung (khi sai de thoat lap)
+
+    return tong;
 }
 
 int main() {
+    int a[100];
     int n;
-    cout << "Nhap n: ";
+    cout << "Nhap so phan tu trong mang n: ";
     cin >> n;
 
-    int d1 = 0; // Biến đếm số phép gán
-    int d2 = 0; // Biến đếm số phép so sánh
-    
-    // Gọi hàm và truyền đầy đủ 3 tham số
-    int ketQua = bt1(n, d1, d2);
+    nhapmang(a, n);
+    xuatmang(a, n);
 
-    cout << "Tong S = " << ketQua << endl;
-    cout << "So phep gan da thuc hien (d1): " << d1 << endl;
-    cout << "So phep so sanh da thuc hien (d2): " << d2 << endl;
+    int d1 = 0, d2 = 0;
+    int kq = TongViTriChan(a, n, d1, d2);
 
+    cout << "\nTong cac phan tu o vi tri chan la: " << kq;
+    cout << "\nSo phep gan da thuc hien (d1): " << d1;
+    cout << "\nSo phep so sanh da thuc hien (d2): " << d2;
     return 0;
 }
