@@ -22,15 +22,12 @@ int TongViTriChan(int a[], int n, int &d1, int &d2) {
     int tong = 0; d1++; // Phep gan khoi tao tong = 0
 
     d1++; // Phep gan khoi tao i = 0 trong vong lap for
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i += 2) {
         d2++; // Dem phep so sanh dieu kien i < n (khi dung)
 
-        d2++; // Dem phep so sanh i % 2 == 0
-        if (i % 2 == 0) {
-            tong += a[i]; d1++; // Phep gan tong = tong + a[i]
-        }
+        tong += a[i]; d1++; // Phep gan tong = tong + a[i]
 
-        d1++; // Phep gan i++ sau moi vong lap
+        d1++; // Phep gan i += 2 sau moi vong lap
     }
     d2++; // Dem 1 lan phep so sanh i < n cuoi cung (khi sai de thoat lap)
 
