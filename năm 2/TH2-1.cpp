@@ -4,7 +4,7 @@ using namespace std;
 // Hàm tính tổng và đếm số phép gán (d1), số phép so sánh (d2)
 int bt1(int n, int &d1, int &d2) {
     int P = 1; d1++; // Phép gán khởi tạo P = 1 (tổng con dau tien: 1)
-    int S = 1; d1++; // Phép gán khởi tạo S = P (số hạng đầu tiên của S là 1)
+    int S = 1; d1++; // Phép gán khởi tạo S = 1 (số hạng đầu tiên của S là 1)
 
     d1++; // Phép gán khởi tạo biến i = 2 trong vòng lặp for
     for (int i = 2; i <= n; i++) {
