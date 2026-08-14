@@ -1,11 +1,6 @@
 #include <iostream>
 using namespace std;
-//Bài tập trên mảng 1 chiều. Viết hàm thực hiện các công việc sau, đếm số phép toán cơ bản đã sử dụng:
-//1. Tìm số chẵn đầu tiên
-//2. Tìm số chẵn cuối cùng
-//3. Đếm số chẵn
-//4. Tìm số chẵn lớn nhất
-//5. Tìm hai số chẵn bằng nhau
+
 int timsochandautien(int a[], int n, int &spss) {
     spss = 0;
     for (int i = 0; i < n; i++) {
