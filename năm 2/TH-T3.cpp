@@ -40,41 +40,37 @@ int demsochan(int a[], int n,int &spg, int &spss) {
     return demsochan;
 }
 int timsochanlonnhat(int a[], int n,int &spg, int &spss) {
-    spg = 0; spg++;
-    spss = 0; spg++;
+    spg = 0;
+    spss = 0;
     int s = -1; spg++;
     for (int i = 0; i < n; i++) {
         spss++;
         if (a[i] % 2 == 0) {
-            s = a[i];
-            spg++;
+            spss++;
+            if (s == -1 || a[i] > s) {
+                s = a[i];
+                spg++;
+            }
         }
     }
     return s;
 }
-int tim2sochanbangnhau (int a[], int n,int &spg, int &spss) {
-    int sc1 = 0, sc2 = 0;
-    int m = 0;
-    spg += 3;
-    for (int i = 0; i < n; i++) {
+
+int tim2sochanbangnhau(int a[], int n, int &spss) {
+    spss = 0;
+    for (int i = 0; i < n - 1; i++) {
         spss++;
         if (a[i] % 2 == 0) {
-            sc1 = a[i];
-            m = i;
-            spg++;
-            break;
+            for (int j = i + 1; j < n; j++) {
+                spss++;
+                if (a[j] % 2 == 0) {
+                    spss++;
+                    if (a[i] == a[j]) {
+                        return 1; 
+                    }
+                }
+            }
         }
     }
-    for (int i = m + 1; i < n; i++) {
-        spss++;
-        if (a[i] % 2 == 0) {
-            sc2 = a[i];
-            spss++;
-            break;
-        }
-    }
-    spss++;
-    if (sc1 == sc2)
-        return 1;
-    return 0;
+    return 0; 
 }
