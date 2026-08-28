@@ -49,7 +49,7 @@ int BinarySearch(int a[], int N, int X, int &dem)
         else if (a[mid] < X)
         {
             cout << "Gia tri cua a[mid]: " << a[mid] << " nho hon " << X << endl;
-            cout << "Thuc hien phep gan: left = mid + 1" << endl;
+            cout << "Thuc hien left = mid + 1" << endl;
             left = mid + 1;
             cout << "Vi tri cua Left: " << left << ", Right: " << right << endl;
             XuatLeftRight(a, left, right);
@@ -57,7 +57,7 @@ int BinarySearch(int a[], int N, int X, int &dem)
         else
         {
             cout << "Gia tri cua a[mid]: " << a[mid] << " lon hon " << X << endl;
-            cout << "Thuc hien phep gan: right = mid - 1" << endl;
+            cout << "Thuc hien right = mid - 1" << endl;
             right = mid - 1;
             cout << "Vi tri cua Left: " << left << ", Right: " << right << endl;
             XuatLeftRight(a, left, right);
