@@ -38,6 +38,8 @@ int BinarySearch(int a[], int N, int X)
             cout << a[i] << " ";
         }
         cout << endl;
+        cout << "Vi tri cua a[mid]: " << mid << endl;
+        cout << "Gia tri cua a[mid]: " << a[mid] << endl;
         cout << "Thuc hien so sanh: " << a[mid] << " va " << X << endl;
         if (a[mid] == X)
         {
@@ -45,12 +47,14 @@ int BinarySearch(int a[], int N, int X)
         }
         else if (a[mid] < X)
         {
+            cout << "Gia tri cua a[mid]: " << a[mid] << " nho hon " << X << endl;
             left = mid + 1;
             cout << "Vi tri cua Left: " << left << ", Right: " << right << endl;
             XuatLeftRight(a, left, right);
         }
         else
         {
+            cout << "Gia tri cua a[mid]: " << a[mid] << " lon hon " << X << endl;
             right = mid - 1;
             cout << "Vi tri cua Left: " << left << ", Right: " << right << endl;
             XuatLeftRight(a, left, right);
