@@ -13,23 +13,45 @@ void SapXepTangDan(int a[], int N) {
             if (a[i] > a[j])
                 HoanVi(a[i], a[j]);
 }
-int BinarySearch(int a[], int N, int X, int &dem) {
+void XuatLeftRight(int a[],int left, int right) {
+    for (int i = left; i <= right; i++) {
+        cout<<a[i]<<" ";
+    }
+    cout<<endl;
+}
+int BinarySearch(int a[], int N, int X) {
     SapXepTangDan(a, N);
     int left = 0;
     int right = N - 1;
-    int dem = 0;
     while (left <= right) {
         int mid = (left + right) / 2;
-        dem++;
         if (a[mid] == X) {
             return mid;
         }
         else if (a[mid] < X) {
             left = mid + 1;
+            XuatLeftRight(a, left, right);
         }
         else {
             right = mid - 1;
+            XuatLeftRight(a, left, right);
         }
     }
     return -1;
+}
+int main() {
+    int a[] = {3, 1, 4, 1, 5};
+    int N;
+    cout<<"Nhap so phan tu: ";
+    cin>>N;
+    int X;
+    cout<<"Nhap gia tri can tim: ";
+    cin>>X;
+    int kq = BinarySearch(a, N, X);
+    if (kq != -1) {
+        cout << "Tim thay " << X << " tai vi tri " << kq << endl;
+    } else {
+        cout << "Khong tim thay " << X << " trong mang" << endl;
+    }
+    return 0;
 }

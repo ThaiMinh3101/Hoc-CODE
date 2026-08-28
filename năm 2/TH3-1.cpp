@@ -1,9 +1,9 @@
 #include<iostream>
 using namespace std;
 void NhapMang(int a[], int N) {
+    srand(time(0));
     for (int i = 0; i < N; i++) {
-        cout << "Nhap a[" << i << "]: ";
-        cin >> a[i];
+        a[i] = rand() % 50; // Sinh so ngau nhien tu 0 den 49
     }
 }
 void XuatMang(int a[], int N) {
