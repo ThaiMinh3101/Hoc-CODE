@@ -24,12 +24,12 @@ int LinearSearch(int a[], int N, int X)
 }
 int main()
 {
-int a[50]; // Khai bao mang
-int N; // Khai bao so phan tu thuc su cua mang
+int a[50];
+int N;
 cout << "Nhap so phan tu cua mang:";
-cin >> N; // Nhap so phan tu cua mang
-NhapMang(a, N); // Nhap mang
-XuatMang(a, N); // Xuat mang
+cin >> N;
+NhapMang(a, N);
+XuatMang(a, N);
 int X;
 cout << "\nNhap gia tri X can tim:";
 cin >> X;
