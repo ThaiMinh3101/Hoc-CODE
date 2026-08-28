@@ -14,6 +14,7 @@ void SapXepTangDan(int a[], int N) {
                 HoanVi(a[i], a[j]);
 }
 void XuatLeftRight(int a[],int left, int right) {
+    cout<< "Tu Left den Right: ";
     for (int i = left; i <= right; i++) {
         cout<<a[i]<<" ";
     }
@@ -40,10 +41,14 @@ int BinarySearch(int a[], int N, int X) {
     return -1;
 }
 int main() {
-    int a[] = {3, 1, 4, 1, 5};
+    int a[100];
     int N;
     cout<<"Nhap so phan tu: ";
     cin>>N;
+    for (int i = 0; i < N; i++) {
+        cout << "Nhap phan tu a[" << i << "]: ";
+        cin >> a[i];
+    }
     int X;
     cout<<"Nhap gia tri can tim: ";
     cin>>X;
