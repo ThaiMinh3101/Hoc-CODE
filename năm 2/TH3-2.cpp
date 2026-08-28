@@ -76,6 +76,12 @@ int main()
         cout << "Nhap phan tu a[" << i << "]: ";
         cin >> a[i];
     }
+    cout << "Mang da nhap la: ";
+    for (int i = 0; i < N; i++)
+    {
+        cout << a[i] << " ";
+    }
+    cout << endl;
     int X;
     cout << "Nhap gia tri can tim: ";
     cin >> X;
