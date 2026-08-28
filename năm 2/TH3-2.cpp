@@ -24,7 +24,7 @@ void XuatLeftRight(int a[], int left, int right)
     }
     cout << endl;
 }
-int BinarySearch(int a[], int N, int X)
+int BinarySearch(int a[], int N, int X, int &dem)
 {
     SapXepTangDan(a, N);
     int left = 0;
@@ -41,6 +41,7 @@ int BinarySearch(int a[], int N, int X)
         cout << "Vi tri cua a[mid]: " << mid << endl;
         cout << "Gia tri cua a[mid]: " << a[mid] << endl;
         cout << "Thuc hien so sanh: " << a[mid] << " va " << X << endl;
+        dem++;
         if (a[mid] == X)
         {
             return mid;
@@ -76,7 +77,8 @@ int main()
     int X;
     cout << "Nhap gia tri can tim: ";
     cin >> X;
-    int kq = BinarySearch(a, N, X);
+    int dem = 0;
+    int kq = BinarySearch(a, N, X, dem);
     if (kq != -1)
     {
         cout << "Tim thay " << X << " tai vi tri " << kq << endl;
@@ -85,5 +87,6 @@ int main()
     {
         cout << "Khong tim thay " << X << " trong mang" << endl;
     }
+    cout << "So lan so sanh da thuc hien: " << dem << endl;
     return 0;
 }

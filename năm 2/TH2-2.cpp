@@ -19,18 +19,10 @@ void xuatmang(int a[], int n) {
 // Tinh tong cac phan tu o vi tri chan (chi so 0, 2, 4, ...)
 // Dem so phep gan (d1) va so phep so sanh (d2)
 int TongViTriChan(int a[], int n, int &d1, int &d2) {
-    int tong = 0; d1++; // Phep gan khoi tao tong = 0
-
-    d1++; // Phep gan khoi tao i = 0 trong vong lap for
+    int tong = 0;
     for (int i = 0; i < n; i += 2) {
-        d2++; // Dem phep so sanh dieu kien i < n (khi dung)
-
-        tong += a[i]; d1++; // Phep gan tong = tong + a[i]
-
-        d1++; // Phep gan i += 2 sau moi vong lap
+        tong += a[i]; d1++; 
     }
-    d2++; // Dem 1 lan phep so sanh i < n cuoi cung (khi sai de thoat lap)
-
     return tong;
 }
 
