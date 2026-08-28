@@ -15,7 +15,16 @@ void SapXepTangDan(int a[], int N)
             if (a[i] > a[j])
                 HoanVi(a[i], a[j]);
 }
-void XuatLeftRight(int a[], int left, int right)
+void XuatViTriLeftRight(int a[], int left, int right)
+{
+    cout << "Vi tri tu Left den Right: ";
+    for (int i = left; i <= right; i++)
+    {
+        cout << i << " ";
+    }
+    cout << endl;
+}
+void XuatGiaTriLeftRight(int a[], int left, int right)
 {
     cout << "Gia tri tu Left den Right: ";
     for (int i = left; i <= right; i++)
@@ -51,16 +60,16 @@ int BinarySearch(int a[], int N, int X, int &dem)
             cout << "Gia tri cua a[mid]: " << a[mid] << " nho hon " << X << endl;
             cout << "Thuc hien left = mid + 1" << endl;
             left = mid + 1;
-            cout << "Vi tri cua Left: " << left << ", Right: " << right << endl;
-            XuatLeftRight(a, left, right);
+            XuatViTriLeftRight(a, left, right);
+            XuatGiaTriLeftRight(a, left, right);
         }
         else
         {
             cout << "Gia tri cua a[mid]: " << a[mid] << " lon hon " << X << endl;
             cout << "Thuc hien right = mid - 1" << endl;
             right = mid - 1;
-            cout << "Vi tri cua Left: " << left << ", Right: " << right << endl;
-            XuatLeftRight(a, left, right);
+            XuatViTriLeftRight(a, left, right);
+            XuatGiaTriLeftRight(a, left, right);
         }
     }
     return -1;
