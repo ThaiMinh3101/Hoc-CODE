@@ -52,21 +52,16 @@ void DoiChoTT(int a[], int N, int& dem1, int& dem2) {
         }
     }
 }
-void SapXepGD(int a[], int N, int& dem1, int& dem2) {
-    int demHoanVi = 0;
-    DemSoNT(a, N);
+void SapXepGD(int a[], int N) {
     for (int i = 0; i < N - 1; i++) {
         for (int j = i + 1; j < N; j++) {
-            dem2++;
             if (a[i] < a[j]) {
-                dem1 += 3;
                 HoanVi(a[i], a[j]);
-                demHoanVi++;
-                cout << "Lan hoan vi thu " << demHoanVi << ": ";
-                XuatMang(a, N);
             }
         }
     }
+    cout << "Mang da sap xep la: ";
+    XuatMang(a, N);
 }
 int main() {
     int a[50];
