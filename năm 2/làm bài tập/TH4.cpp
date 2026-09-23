@@ -66,10 +66,8 @@ void SapXepGD(int a[], int N) {
 int main() {
     int a[50];
     int N;
-    cout << "Nhap so phan tu: ";
-    cin >> N;
     NhapMang(a, N);
-    cout << "Mang da nhap la: ";
+    cout << "Mang da nhap ngau nhien la: ";
     XuatMang(a, N);
     int dem1 = 0, dem2 = 0;
     DoiChoTT(a, N, dem1, dem2);

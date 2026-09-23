@@ -27,6 +27,7 @@ int main(){
 	printf("3.Nhan vien\n");
 	printf("4.Giu xe\n");
 	printf("\n");
+
 	do{
 	printf("nhap vao so thu tu tuy theo mong muon ung tuyen cua ban(1-4):");
 	scanf("%d",&luachon);
@@ -34,6 +35,7 @@ int main(){
 		printf("nhap sai vui long nhap lai(nhap1-5)\n");
 	}
 }while(luachon<1||luachon>4);
+
 	switch(luachon){
 		case 1:printf("Lao cong:\n");
 		if(cannang>60&&cannang<70&&chieucao>160){
