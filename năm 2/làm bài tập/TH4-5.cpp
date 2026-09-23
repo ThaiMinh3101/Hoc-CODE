@@ -42,9 +42,10 @@ void SapXepGD(int a[], int N, int &dem1, int &dem2) {
   }
 }
 int main() {
-    int a[50];
+    int a[100];
     int N;
     int luachon;
+    int dem1 = 0, dem2 = 0;
     NhapMang(a, N);
     cout << "Mang da nhap la: ";
     XuatMang(a, N);
@@ -61,7 +62,6 @@ int main() {
     } while (luachon < 1 || luachon > 2); // while kết thúc vòng lặp khi người dùng nhập sai
     switch (luachon) {
     case 1:
-        int dem1 = 0, dem2 = 0;
         SapXepTD(a, N, dem1, dem2);
         cout << "Mang da sap xep tang dan la: ";
         XuatMang(a, N);
@@ -69,7 +69,6 @@ int main() {
         cout << "so lan so sanh " << dem2;
         break;
     case 2:
-        int dem1 = 0, dem2 = 0;
         SapXepGD(a, N, dem1, dem2);
         cout << "Mang da sap xep giam dan la: ";
         XuatMang(a, N);
