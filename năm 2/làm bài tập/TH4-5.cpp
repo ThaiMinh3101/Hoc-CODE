@@ -44,12 +44,14 @@ void SapXepGD(int a[], int N, int &dem1, int &dem2) {
 int main() {
     int a[100];
     int N;
+    cout<<"Nhap vao so phan tu can dung: ";
+    cin >> N;
     int luachon;
     int dem1 = 0, dem2 = 0;
     NhapMang(a, N);
-    cout << "Mang da nhap la: ";
+    cout << "Mang da nhap ngau nhien la: ";
     XuatMang(a, N);
-    cout << "------BANG LUA CHON CONG VIEC MUON LAM------";
+    cout << "------BANG LUA CHON CONG VIEC MUON LAM------\n";
     cout << "1.Sap xep tang dan\n";
     cout << "2.Sap xep giam dan\n";
 

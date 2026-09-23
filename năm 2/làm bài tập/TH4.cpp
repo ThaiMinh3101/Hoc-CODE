@@ -66,6 +66,8 @@ void SapXepGD(int a[], int N) {
 int main() {
     int a[100];
     int N;
+    cout<<"Nhap vao so phan tu can dung: ";
+    cin >> N;
     NhapMang(a, N);
     cout << "Mang da nhap ngau nhien la: ";
     XuatMang(a, N);
