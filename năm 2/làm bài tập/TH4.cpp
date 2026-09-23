@@ -20,11 +20,6 @@ void HoanVi(int& a, int& b)
     a = b;
     b = tam;
 }
-void SaoChepMang(int a[], int b[], int N) {
-    for (int i = 0; i < N; i++) {
-        b[i] = a[i];
-    }
-}
 void DemSoNT(int a[], int N) {
     int dem = 0;
     for (int i = 0; i < N - 1; i++) {
