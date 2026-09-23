@@ -46,6 +46,8 @@ void DoiChoTT(int a[], int N, int& dem1, int& dem2) {
             }
         }
     }
+    cout << "Mang da sap xep la: ";
+    XuatMang(a, N);
 }
 void SapXepGD(int a[], int N) {
     for (int i = 0; i < N - 1; i++) {
@@ -68,8 +70,6 @@ int main() {
     XuatMang(a, N);
     int dem1 = 0, dem2 = 0;
     DoiChoTT(a, N, dem1, dem2);
-    cout << "Mang da sap xep la: ";
-    XuatMang(a, N);
     cout << "so lan gan: " << dem1 << endl;
     cout << "so lan so sanh " << dem2;
 }
