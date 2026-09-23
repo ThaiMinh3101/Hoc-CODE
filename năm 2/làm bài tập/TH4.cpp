@@ -31,6 +31,8 @@ void DemSoNT(int a[], int N) {
     }
     cout << "so nghich the la: " << dem << endl;
 }
+// Số nghịch thế không bắt buộc trùng với số lần hoán vị, vì khi nhập mảng số ngẫu nhiên sẽ 
+// có những phần tử bằng nhau, khi đó sẽ không hoán vị nhưng vẫn được tính là một nghịch thế.
 void DoiChoTT(int a[], int N, int& dem1, int& dem2) {
     int demHoanVi = 0;
     DemSoNT(a, N);
