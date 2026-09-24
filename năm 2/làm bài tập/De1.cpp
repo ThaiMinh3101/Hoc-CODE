@@ -93,6 +93,12 @@ void SapXepGiamDan(float a[], int N) {
 //
 // Tóm lại: k là số lần chia đôi, và số lần chia đôi từ n về 1
 // chính là log₂n theo đúng định nghĩa của log.
-// => Độ phức tạp: O(log₂n)
+//
+// Tốt nhất: O(1)     - tìm được X ngay ở lần chia đầu tiên (phần tử ở giữa)
+// Xấu nhất: O(log n) - phải chia đôi đến khi còn 1 phần tử
+//
+// Độ phức tạp của thuật toán được tính theo trường hợp xấu nhất => O(log n)
+// => Độ phức tạp: O(log n)
+
 
 
