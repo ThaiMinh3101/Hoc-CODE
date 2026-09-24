@@ -35,8 +35,7 @@ int BinarySearch(int a[], int N, int X)
     while (left <= right)
     {
         int mid = (left + right) / 2;
-        for (int i = mid; i <= right; i++)
-        {
+        for (int i = mid; i <= right; i++) {
             cout << a[i] << " ";
         }
         if (a[mid] == X) {
