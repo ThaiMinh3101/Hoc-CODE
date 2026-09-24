@@ -64,3 +64,35 @@ void SapXepGiamDan(float a[], int N) {
     }
 }
 
+// Câu 8: Độ phức tạp của thuật toán tìm kiếm nhị phân
+//
+// Sau bước    Còn lại
+//    0          n
+//    1          n/2
+//    2          n/4
+//    3          n/8
+//    k          n/2ᵏ
+//
+// Dừng khi còn 1 phần tử:
+// n/2ᵏ = 1 ⇒ 2ᵏ = n
+//
+// log₂n là gì?
+// log₂n = "2 mũ mấy thì bằng n?"
+// Nó là phép ngược của lũy thừa, giống như:
+//   2³ = 8    thì log₂8    = 3
+//   2⁴ = 16   thì log₂16   = 4
+//   2¹⁰ = 1024 thì log₂1024 = 10
+//
+// Ví dụ cho dễ hiểu:
+//   Dãy có n = 8 phần tử:
+//     8 → 4 → 2 → 1
+//     Chia đôi 3 lần thì còn 1, nên k = 3. Kiểm tra: log₂8 = 3 ✓
+//
+//   Dãy có n = 16 phần tử:
+//     16 → 8 → 4 → 2 → 1, chia 4 lần, và log₂16 = 4 ✓
+//
+// Tóm lại: k là số lần chia đôi, và số lần chia đôi từ n về 1
+// chính là log₂n theo đúng định nghĩa của log.
+// => Độ phức tạp: O(log₂n)
+
+
