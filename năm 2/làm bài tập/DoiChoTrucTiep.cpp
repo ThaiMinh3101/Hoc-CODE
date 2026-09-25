@@ -47,7 +47,7 @@ void DoiChoTT(int a[], int N, int& dem1, int& dem2) {
             }
         }
     }
-    cout << "Mang da sap xep la: ";
+    cout << "Mang da doi cho truc tiep la: ";
     XuatMang(a, N);
 }
 int main() {
