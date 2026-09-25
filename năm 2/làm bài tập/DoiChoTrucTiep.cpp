@@ -3,10 +3,9 @@
 #include<ctime>
 using namespace std;
 void NhapMang(int a[], int N) {
-    for (int i = 0; i < N; i++) {
-        cout<<"Nhap a["<<i<<"] = ";
-        cin>>a[i];
-    }
+    srand(time(0));
+    for (int i = 0; i < N; i++)
+        a[i] = rand() % 50;
 }
 void XuatMang(int a[], int N) {
     for (int i = 0; i < N; i++) {
