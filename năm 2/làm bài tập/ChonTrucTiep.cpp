@@ -2,10 +2,11 @@
 #include<cstdlib>
 #include<ctime>
 using namespace std;
-void NhapMang(int a[], int N) {
-    srand(time(0));
-    for (int i = 0; i < N; i++)
-        a[i] = rand() % 50;
+void NhapMang(int a[], int n) {
+    for (int i = 0; i < n; i++) {
+        cout << "Nhap a[" << i << "]: ";
+        cin >> a[i];
+    }
 }
 void XuatMang(int a[], int N) {
     for (int i = 0; i < N; i++) {
@@ -36,11 +37,15 @@ void ChonTrucTiep(int a[], int N, int &dem1, int &dem2) {
     for (int i = 0; i < N -1; i++) {
         int min = i;
         for (int j = i + 1; j < N; j++) {
+            dem2++;
             if (a[min] > a[j])
             min = j;
+            dem1++;
         }
+        dem2++;
         if (min != i)
         HoanVi(a[min], a[i]);
+        dem1+=3;
         demHoanVi++;
         cout << "Lan hoan vi thu " << demHoanVi << ": ";
         XuatMang(a, N);
