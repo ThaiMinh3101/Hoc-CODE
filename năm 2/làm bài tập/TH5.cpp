@@ -47,7 +47,7 @@ int main() {
     cout<<"Nhap vao so phan tu can dung: ";
     cin >> N;
     NhapMang(a, N);
-    cout << "Mang da nhap la: ";
+    cout << "Mang da nhap ngau nhien la: ";
     XuatMang(a, N);
     int dem1 = 0, dem2 = 0;
     ChonTT(a, N, dem1, dem2);

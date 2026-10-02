@@ -2,10 +2,11 @@
 #include<cstdlib>
 #include<ctime>
 using namespace std;
-void NhapMang(int a[], int N) {
-    srand(time(0));
-    for (int i = 0; i < N; i++)
-        a[i] = rand() % 50;
+void NhapMang(int a[], int n) {
+    for (int i = 0; i < n; i++) {
+        cout << "Nhap a[" << i << "]: ";
+        cin >> a[i];
+    }
 }
 void XuatMang(int a[], int N) {
     for (int i = 0; i < N; i++) {
