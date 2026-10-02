@@ -37,7 +37,7 @@ void ChonTT(int a[], int N, int &dem1, int &dem2) {
         cout << "Lan hoan vi thu " << demHoanVi << ": ";
         XuatMang(a, N);
     }
-    cout<<"Mang da chon truc tiep: ";
+    cout<<"Mang da chon truc tiep tang dan la: ";
     XuatMang(a, N);
 }
 void ChonTTGD(int a[], int N) {
@@ -50,7 +50,7 @@ void ChonTTGD(int a[], int N) {
         if (min != i)
         HoanVi(a[min], a[i]);
     }
-    cout<<"Mang da chon truc tiep: ";
+    cout<<"Mang da chon truc tiep giam dan la: ";
     XuatMang(a, N);
 }
 int main() {
