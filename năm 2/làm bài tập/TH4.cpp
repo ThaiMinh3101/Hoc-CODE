@@ -34,7 +34,7 @@ void DemSoNT(int a[], int N) {
 }
 // Số nghịch thế không bắt buộc trùng với số lần hoán vị, vì khi nhập mảng số ngẫu nhiên sẽ 
 // có những phần tử bằng nhau, khi đó sẽ không hoán vị nhưng vẫn được tính là một nghịch thế.
-void DoiChoTT(int a[], int N, int& dem1, int& dem2) {
+void DoiChoTTTD(int a[], int N, int& dem1, int& dem2) {
     int demHoanVi = 0;
     DemSoNT(a, N);
     for (int i = 0; i < N - 1; i++) {
@@ -52,7 +52,7 @@ void DoiChoTT(int a[], int N, int& dem1, int& dem2) {
     cout << "Mang da sap xep la: ";
     XuatMang(a, N);
 }
-void SapXepGD(int a[], int N) {
+void DoiChoTTGD(int a[], int N) {
     for (int i = 0; i < N - 1; i++) {
         for (int j = i + 1; j < N; j++) {
             if (a[i] < a[j]) {
@@ -72,7 +72,7 @@ int main() {
     cout << "Mang da nhap ngau nhien la: ";
     XuatMang(a, N);
     int dem1 = 0, dem2 = 0;
-    DoiChoTT(a, N, dem1, dem2);
+    DoiChoTTTD(a, N, dem1, dem2);
     cout << "so lan gan: " << dem1 << endl;
     cout << "so lan so sanh " << dem2;
 }

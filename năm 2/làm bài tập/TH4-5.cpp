@@ -61,8 +61,8 @@ int main() {
         if (luachon > 2 || luachon < 1) {
             cout << "nhap sai vui long nhap lai(nhap 1-2): \n";
         }
-    } while (luachon < 1 || luachon > 2); // while kết thúc vòng lặp khi người dùng nhập sai
-    
+    } while (luachon > 2 || luachon < 1); // while kết thúc vòng lặp khi người dùng nhập đúng
+
     switch (luachon) {
     case 1:
         SapXepTD(a, N, dem1, dem2);
