@@ -34,7 +34,7 @@ void SapXepGD(int a[], int N, int &dem1, int &dem2) {
   for (int i = 0; i < N - 1; i++) {
     for (int j = i + 1; j < N; j++) {
       dem2++;
-      if (a[i] > a[j]) {
+      if (a[i] < a[j]) {
         dem1 += 3;
         HoanVi(a[i], a[j]);
       }
