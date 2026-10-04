@@ -32,10 +32,8 @@ void ChonTT(int a[], int N, int &dem1, int &dem2) {
             }
         }
         dem2++;
-        if (min != i) {
-            HoanVi(a[min], a[i]);
-            dem1+=3;
-        }
+        HoanVi(a[min], a[i]);
+        dem1+=3;
         demHoanVi++;
         cout << "Lan hoan vi thu " << demHoanVi << ": ";
         XuatMang(a, N);
