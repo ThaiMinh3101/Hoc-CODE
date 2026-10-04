@@ -60,7 +60,6 @@ void ChonTTTD(int a[], int N, int &dem1, int &dem2) {
                 dem1++;
             }
         }
-        dem2++;
         HoanVi(a[min], a[i]);
         dem1+=3;
         demHoanVi++;
@@ -79,7 +78,6 @@ void ChonTTGD(int a[], int N, int &dem1, int &dem2) {
                 dem1++;
             }
         }
-        dem2++;
         HoanVi(a[min], a[i]);
         dem1+=3;
         demHoanVi++;
