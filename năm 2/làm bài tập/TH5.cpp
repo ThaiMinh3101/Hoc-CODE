@@ -40,14 +40,18 @@ void ChonTT(int a[], int N, int &dem1, int &dem2) {
     cout<<"Mang da chon truc tiep tang dan la: ";
     XuatMang(a, N);
 }
-void ChonTTGD(int a[], int N) {
+void ChonTTGD(int a[], int N, int &dem1, int &dem2) {
     for (int i = 0; i < N -1; i++) {
         int min = i;
         for (int j = i + 1; j < N; j++) {
-            if (a[min] < a[j])
-            min = j;
+            dem2++;
+            if (a[min] < a[j]) {
+                min = j;
+                dem1++;
+            }
         }
         HoanVi(a[min], a[i]);
+        dem1+=3;
     }
     cout<<"Mang da chon truc tiep giam dan la: ";
     XuatMang(a, N);
