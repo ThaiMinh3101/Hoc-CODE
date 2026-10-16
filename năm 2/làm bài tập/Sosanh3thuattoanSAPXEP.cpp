@@ -36,7 +36,7 @@ void DoiChoTT(int a[], int N, int& dem1, int& dem2) {
                 dem1 += 3;
                 HoanVi(b[i], b[j]);
                 demHoanVi++;
-                cout << "Lan hoan vi thu " << demHoanVi << ": ";
+                cout << "Lan doi cho truc tiep thu " << demHoanVi << ": ";
                 XuatMang(b, N);
             }
         }
@@ -60,7 +60,7 @@ void ChonTT(int a[], int N, int &dem1, int &dem2) {
         HoanVi(b[min], b[i]);
         dem1+=3;
         demHoanVi++;
-        cout << "Lan hoan vi thu " << demHoanVi << ": ";
+        cout << "Lan chon truc tiep thu " << demHoanVi << ": ";
         XuatMang(b, N);
     }
     cout<<"Mang da chon truc tiep: ";
@@ -77,7 +77,7 @@ void NoiBot(int a[], int N, int &dem1, int &dem2) {
                 dem1+=3;
                 HoanVi(b[j], b[j-1]);
                 demHoanVi++;
-                cout << "Lan hoan vi thu " << demHoanVi << ": ";
+                cout << "Lan noi bot thu " << demHoanVi << ": ";
                 XuatMang(b, N);
             }
         }
@@ -94,16 +94,20 @@ int main() {
     NhapMang(a, N);
     cout << "Mang da nhap ngau nhien la: ";
     XuatMang(a, N);
+    cout << endl;
     int dem1 = 0, dem2 = 0;
     DoiChoTT(a, N, dem1, dem2);
     cout << "so lan gan: " << dem1 << endl;
     cout << "so lan so sanh " << dem2 << endl;
+    cout << endl;
     dem1 = 0; dem2 = 0;
     ChonTT(a, N, dem1, dem2);
     cout << "so lan gan: " << dem1 << endl;
     cout << "so lan so sanh " << dem2 << endl;
+    cout << endl;
     dem1 = 0; dem2 = 0;
     NoiBot(a, N, dem1, dem2);
     cout << "so lan gan: " << dem1 << endl;
     cout << "so lan so sanh " << dem2;
+    cout << endl;
 }
