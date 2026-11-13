@@ -6,7 +6,7 @@ void NhapMang(int a[], int N) {
         cout << "Nhap a[" << i << "]: ";
         cin >> a[i];
     }
-}
+} 
 
 // Hàm chỉ xuất đoạn từ l đến r
 void XuatMangLR(int a[], int l, int r) {
